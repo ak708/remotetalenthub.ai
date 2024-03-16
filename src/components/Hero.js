@@ -9,7 +9,7 @@ const Hero = () => {
       <div className="justify-center items-center p-20">
         <h1 className="text-7xl font-bold text-center py-5">Welcome to</h1>
         <div className="py-5">
-          <Text text="CrackedDevs" />
+          <Text text="RemoteTalentHub" />
         </div>
         <p className="text-2xl text-center ">
           The best place to find your dream job
