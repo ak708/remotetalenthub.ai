@@ -19,7 +19,7 @@ export async function GET() {
   // TODO: Have to modify the limit and active based on the requirement
   const ACTIVE = true;
   const response = await fetch(
-    `https://api.crackeddevs.com/v1/get-jobs?active=${ACTIVE}`,
+    `https://api.crackeddevs.com/v1/get-jobs?limit=${30}&active=${ACTIVE}`,
     {
       headers: {
         "api-key": `${API_KEY}`,
