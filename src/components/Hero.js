@@ -1,6 +1,7 @@
 import React from "react";
 import Text from "./Text1";
 import { IoSearch } from "react-icons/io5";
+import Footer from "./Footer";
 
 const Hero = () => {
   const l1 = "Welcome to";
@@ -19,17 +20,17 @@ const Hero = () => {
           The best place to find your dream job
         </p>
       </div>
-      <div className="flex justify-center">
-        <div className="bg-green-900 opacity-50 hover:opacity-65 text-green-500 rounded-full flex-row flex items-center justify-around">
-          <IoSearch className="text-green-500 w-6 font-bold h-6 " />
-
+      <div className="">
+        <div className="bg-green-900 opacity-50 hover:opacity-65 text-green-500 p-5 rounded-full flex-row flex items-center justify-around">
+          <IoSearch className="text-white w-7 font-bold h-7 " />
           <input
             type="text"
             placeholder="Search for jobs"
-            className="p-2 rounded-full w-full bg-transparent text-white border-none "
+            className="p-2 rounded-full  bg-transparent text-white border-none "
           />
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

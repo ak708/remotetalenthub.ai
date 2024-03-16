@@ -5,7 +5,7 @@ import Jobs from "@/components/Jobs";
 export default function Home() {
   return (
     <div className="w-screen h-screen bg-black">
-      <div className="p-3">
+      <div className="">
         <Navbar />
         <Hero />
       </div>
