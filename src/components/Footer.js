@@ -7,7 +7,7 @@ import { FaXTwitter } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
 const Footer = () => {
   return (
-    <div className=" flex flex-row justify-around">
+    <div className=" flex flex-row justify-around mb-0 pt-20">
       <div className="flex flex-col gap-2">
         <h1>Company</h1>
         <p>Address</p>
@@ -31,20 +31,26 @@ const Footer = () => {
         <h1>Social Media</h1>
         <div className="flex flex-row gap-5">
           <p>
-            <FaXTwitter />
+            <FaXTwitter className="hover:text-green-500 hover:scale-125 cursor-pointer" />
           </p>
           <p>
-            <FaFacebook />
+            <FaFacebook className="hover:text-green-500 hover:scale-125 cursor-pointer" />
           </p>
           <p>
-            <FaInstagram />
+            <FaInstagram className="hover:text-green-500 hover:scale-125 cursor-pointer" />
           </p>
           <p>
-            <FaLinkedin />
+            <FaLinkedin className="hover:text-green-500 hover:scale-125 cursor-pointer" />
           </p>
         </div>
-        <h1>Email Newsletter</h1>
-        <input className="" place />
+        <div>
+          <h1 className="py-2">Email Newsletter</h1>
+          <input
+            type="text"
+            placeholder="Enter your email"
+            className="p-2 rounded-full bg-transparent text-white border hover:border-green-500"
+          />
+        </div>
       </div>
     </div>
   );
