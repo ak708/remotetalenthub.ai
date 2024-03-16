@@ -1,11 +1,8 @@
 import React from "react";
-import Navbar from "./Navbar";
 
 const Jobs = () => {
   return (
     <div>
-      <Navbar />
-
       <div className="text-white ">
         <div className="flex flex-row justify-between p-5">
           <h2>Filter</h2>
