@@ -1,8 +1,8 @@
 import React from "react";
 import Image from "next/image";
-import { IoLocationSharp } from "react-icons/io5";
 import { FaDollarSign } from "react-icons/fa";
 import { GrTechnology } from "react-icons/gr";
+import Link from "next/link";
 
 const Jobs = ({ job }) => {
   return (
@@ -27,13 +27,9 @@ const Jobs = ({ job }) => {
           <h2 className="text-gray-400 text-sm">{job.company}</h2>
         </div>
         <div className="flex items-center gap-3">
-          <div className="bg-white text-black px-2 py-1 rounded-full">
-            Remote
-          </div>
-          <div className="bg-[#353535] text-gray-200 px-2 py-1 rounded-full">
-            On Site
-          </div>
-          <div className="bg-[#22c55e] text-black px-2 py-1 rounded-full">
+          <div className="text-sm border px-2 py-1 rounded-full">Remote</div>
+          <div className="text-sm border px-2 py-1 rounded-full">On Site</div>
+          <div className="bg-[#22c55e] text-sm text-black px-2 py-1 rounded-full">
             {job.job_type}
           </div>
         </div>
@@ -48,13 +44,22 @@ const Jobs = ({ job }) => {
             <div>{job.max_payment_usd || "Not Provided"}</div>
           </div>
         </div>
-        {job.deadline ? (
-          <div className="text-sm text-red-500">
-            Deadline : {job.deadline.slice(0, 10)}
-          </div>
-        ) : (
-          <div className="text-sm text-red-500">Deadline : Not Provided</div>
-        )}
+        <div className="flex items-center justify-between">
+          <Link
+            href={`${job.apply_url}`}
+            target="_blank"
+            className="text-md font-light p-2 rounded-md border-2 transition-all ease-in-out duration-200 border-green-500 hover:bg-green-500 hover:text-back"
+          >
+            Apply Now
+          </Link>
+          {job.deadline ? (
+            <div className="text-sm text-red-500">
+              Deadline : {job.deadline.slice(0, 10)}
+            </div>
+          ) : (
+            <div className="text-sm text-red-500">Deadline : Not Provided</div>
+          )}
+        </div>
       </div>
     </div>
   );

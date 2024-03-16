@@ -1,8 +1,11 @@
+import { useUserDetails } from "@/utils/zustand";
 import React from "react";
 
 const JobFilter = () => {
+  const { user } = useUserDetails();
   return (
-    <div className="max-w-[350px] flex flex-col gap-4">
+    <div className="max-w-[350px] flex flex-col gap-4 text-white">
+      {user && <h1>Hello {user.displayName}</h1>}
       <div className="lg:flex items-center gap-3">
         <input
           type="text"

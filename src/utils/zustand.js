@@ -12,21 +12,11 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import { NextResponse } from "next/server";
+import { auth } from "@/firebase";
+import { create } from "zustand";
 
-export async function GET() {
-  const API_KEY = process.env.API_KEY; // your api key
-  // TODO: Have to modify the limit and active based on the requirement
-  const ACTIVE = true;
-  const response = await fetch(
-    `https://api.crackeddevs.com/v1/get-jobs?limit=${30}&active=${ACTIVE}`,
-    {
-      headers: {
-        "api-key": `${API_KEY}`,
-      },
-    }
-  );
-  const data = await response.json();
-  console.log(data); // get the data from the response
-  return NextResponse.json(data);
-}
+export const useUserDetails = create((set) => ({
+  user: null || auth.currentUser,
+  setUser: (user) => set((state) => ({ user: user })),
+  signOutUser: () => set({ user: null }),
+}));
