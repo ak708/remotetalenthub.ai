@@ -21,7 +21,7 @@ const Navbar = () => {
             About
           </li>
         </ul>
-        <button className="hover:bg-green-500 p-2 rounded-md hover:text-white transition">
+        <button className="hover:bg-green-500 p-2 rounded-md hover:text-black transition ">
           Sign In
         </button>
       </div>
