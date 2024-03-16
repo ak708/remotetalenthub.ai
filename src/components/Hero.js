@@ -4,11 +4,6 @@ import { IoSearch } from "react-icons/io5";
 import Footer from "./Footer";
 
 const Hero = () => {
-  const l1 = "Welcome to";
-  const l2 = "CrackedDevs";
-  const l1ren = ({ text }) => {
-    text.split("").map((letter, index) => <h1 className="">{letter}</h1>);
-  };
   return (
     <div className="text-white flex-col flex justify-center ">
       <div className="justify-center items-center p-20">
@@ -20,9 +15,9 @@ const Hero = () => {
           The best place to find your dream job
         </p>
       </div>
-      <div className="">
-        <div className="bg-green-900 opacity-50 hover:opacity-65 text-green-500 p-5 rounded-full flex-row flex items-center justify-around">
-          <IoSearch className="text-white w-7 font-bold h-7 " />
+      <div className="flex justify-center">
+        <div className="bg-green-900 opacity-50 hover:opacity-65 text-green-500 rounded-full flex-row flex items-center justify-around">
+          <IoSearch className="text-green-500 w-6 font-bold h-6 " />
           <input
             type="text"
             placeholder="Search for jobs"
