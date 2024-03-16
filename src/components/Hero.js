@@ -1,6 +1,7 @@
 import React from "react";
 import Text from "./Text1";
 import { IoSearch } from "react-icons/io5";
+import Footer from "./Footer";
 
 const Hero = () => {
   return (
@@ -20,10 +21,11 @@ const Hero = () => {
           <input
             type="text"
             placeholder="Search for jobs"
-            className="p-2 rounded-full w-full bg-transparent text-white border-none "
+            className="p-2 rounded-full  bg-transparent text-white border-none "
           />
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

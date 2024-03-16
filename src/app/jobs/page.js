@@ -1,8 +1,8 @@
 "use client";
-import { useState, useEffect, FC } from "react";
-import Link from "next/link";
-
-const Page = () => {
+import JobCard from "@/components/JobCard";
+import JobFilter from "@/components/JobFilter";
+import { useEffect, useState } from "react";
+export default function Job() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -18,42 +18,15 @@ const Page = () => {
         setLoading(false);
       });
   }, []);
-
   return (
-    <div className="p-4 text-white">
-      {loading && <p className="text-blue-500">Loading...</p>}
-      {data && (
-        <div className="p-4 rounded-md mt-4">
-          <h1 className="mb-5 text-4xl">Jobs</h1>
-          {data.map((job) => (
-            <div
-              key={job.id}
-              className="m-5 rounded-md border border-gray-300 p-5"
-            >
-              <h2 className="mb-2 text-2xl">{job.title}</h2>
-              <p className="mb-2">{job.description}</p>
-              <p className="mb-2">Company: {job.company}</p>
-              <p className="mb-2">
-                Technologies: {job.technologies.join(", ")}
-              </p>
-              <p className="mb-2">Main Technology: {job.main_technology}</p>
-              <p className="mb-2">Job Type: {job.job_type}</p>
-              <p className="mb-2">Salary: {job.max_payment_usd} USD</p>
-              <p className="mb-2">Location: {job.location_iso || "Remote"}</p>
-              <p className="mb-2">Applications: {job.applications}</p>
-              <p className="mb-2">Views: {job.views}</p>
-              <Link
-                href={job.apply_url}
-                className="text-blue-500 hover:underline"
-                target="_blank"
-              >
-                Apply Here
-              </Link>
-            </div>
-          ))}
-        </div>
-      )}
+    <div className="pt-[100px] h-screen scroll-smooth overflow-y-hidden bg-black text-white px-[150px] flex gap-7">
+      <JobFilter />
+
+      <div className="flex-grow min-w-[500px] scroll-smooth grid grid-cols-1 lg:grid-cols-2 gap-7 max-h-full overflow-y-scroll">
+        {data?.map((job) => (
+          <JobCard key={job.id} job={job} />
+        ))}
+      </div>
     </div>
   );
-};
-export default Page;
+}
