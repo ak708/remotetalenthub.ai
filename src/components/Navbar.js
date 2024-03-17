@@ -68,22 +68,6 @@ const Navbar = () => {
               Community
             </Link>
           </li>
-          <li className="hover:text-green-500 font-semibold rounded-full p-1 backdrop-blur-lg transition">
-            <Link
-              href="/company"
-              className="cursor-pointer hover:text-green-500 font-semibold"
-            >
-              Company
-            </Link>
-          </li>
-          <li className="hover:text-green-500 font-semibold rounded-full p-1 backdrop-blur-lg transition">
-            <Link
-              href="/about"
-              className="cursor-pointer hover:text-green-500 font-semibold"
-            >
-              About
-            </Link>
-          </li>
         </ul>
         {!user ? (
           <button

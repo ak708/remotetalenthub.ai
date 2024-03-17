@@ -2,6 +2,7 @@ import React from "react";
 import { FaPhone } from "react-icons/fa";
 import { MdOutlineEmail } from "react-icons/md";
 import { FaInstagram } from "react-icons/fa";
+import Link from "next/link";
 import { FaFacebook } from "react-icons/fa";
 import { PiLinkSimpleBold } from "react-icons/pi";
 import { FaXTwitter } from "react-icons/fa6";
@@ -32,14 +33,18 @@ const Footer = () => {
           <div className="text-xl font-semibold text-green-500 flex flex-row gap-2 items-center">
             Links <PiLinkSimpleBold />
           </div>
-          <p className="flex flex-row gap-2 items-center group cursor-pointer hover:text-green-500">
-            Home{" "}
-            <IoIosArrowForward className="opacity-0 group-hover:opacity-100 transition group-hover:text-green-500" />
-          </p>
-          <p className="flex flex-row gap-2 items-center group cursor-pointer hover:text-green-500">
-            Jobs{" "}
-            <IoIosArrowForward className="opacity-0 group-hover:opacity-100 transition group-hover:text-green-500" />
-          </p>
+          <Link href="/">
+            <p className="flex flex-row gap-2 items-center group cursor-pointer hover:text-green-500">
+              Home{" "}
+              <IoIosArrowForward className="opacity-0 group-hover:opacity-100 transition group-hover:text-green-500" />
+            </p>
+          </Link>
+          <Link href="/jobs">
+            <p className="flex flex-row gap-2 items-center group cursor-pointer hover:text-green-500">
+              Jobs{" "}
+              <IoIosArrowForward className="opacity-0 group-hover:opacity-100 transition group-hover:text-green-500" />
+            </p>
+          </Link>
           <p className="flex flex-row gap-2 items-center group cursor-pointer hover:text-green-500">
             Community{" "}
             <IoIosArrowForward className="opacity-0 group-hover:opacity-100 transition group-hover:text-green-500" />
